@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static char *font = "mono:pixelsize=20:antialias=true:autohint=true";
+static char *font2[] = { "JoyPixels:pixelsize=14:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -105,46 +105,46 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
-	[255] = 0,
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+
+	  /* 8 normal colors */
+	[0] = "#000000", /* black   */
+	[1] = "#ff0000", /* red     */
+	[2] = "#38de21", /* green   */
+	[3] = "#ffe50a", /* yellow  */
+	[4] = "#1460d2", /* blue    */
+	[5] = "#ff005d", /* magenta */
+	[6] = "#00bbbb", /* cyan    */
+	[7] = "#bbbbbb", /* white   */
+	/* 8 bright colors */
+	[8]  = "#555555", /* black   */
+	[9]  = "#f40e17", /* red     */
+	[10] = "#3bd01d", /* green   */
+	[11] = "#edc809", /* yellow  */
+	[12] = "#5555ff", /* blue    */
+	[13] = "#ff55ff", /* magenta */
+	[14] = "#6ae3fa", /* cyan    */
+	[15] = "#ffffff", /* white   */
+	/* special colors */
+	[256] = "#132738", /* background */
+	[257] = "#ffffff", /* foreground */
 };
 
-
 /*
+<<<<<<< HEAD
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+unsigned int defaultcs = 257;
+unsigned int defaultrcs = 258;
 
 /*
  * Default shape of cursor
@@ -166,8 +166,8 @@ static unsigned int rows = 24;
  * Default colour and shape of the mouse cursor
  */
 static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 7;
-static unsigned int mousebg = 0;
+static unsigned int mousefg = 0;
+static unsigned int mousebg = 258;
 
 /*
  * Color used to display font attributes when fontconfig selected a font which
